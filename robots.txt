@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /panier.html
+Disallow: /paiement.html
+Disallow: /commander.html
+Disallow: /mon-compte.html
+Disallow: /mon-compte-2.html
+Disallow: /reservation.html
+Disallow: /accueil-proposition.html
+
+Sitemap: https://mapausegrossesse.fr/sitemap.xml
