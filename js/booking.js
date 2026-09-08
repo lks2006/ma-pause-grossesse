@@ -31,13 +31,13 @@
       id: "ouest",
       name: "Étel, Bretagne",
       label: "Maison dans l’Ouest",
-      photo: "https://mapausegrossesse.fr/wp-content/uploads/2026/08/IMG_2996-3-1024x635.jpeg"
+      photo: "img/ouest/ext-01.jpeg"
     },
     est: {
       id: "est",
       name: "La Moncelle, Grand Est",
       label: "Maison dans l’Est",
-      photo: "https://mapausegrossesse.fr/wp-content/uploads/2026/08/2d3c5c25-2bd1-447e-83a1-8b259ceea345.jpeg-1024x681.avif"
+      photo: "img/est/ext/01.avif"
     }
   };
 

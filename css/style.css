@@ -21,7 +21,7 @@ body {
   color: var(--ink-2);
   font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 h1, h2, h3 {
   font-family: "Cormorant Garamond", serif;
@@ -311,6 +311,7 @@ p { margin: 0 0 1em; }
   inset: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
   opacity: 0;
   transition: opacity .6s ease;
@@ -393,7 +394,7 @@ p { margin: 0 0 1em; }
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: 50% 12%;
-  border-radius: 50% 50% 18px 18px / 34% 34% 18px 18px;
+  border-radius: 50% 50% 18px 18px;
   display: block;
 }
 .page-equipe .team-intro { padding-bottom: 28px; }
@@ -594,20 +595,51 @@ footer a { color: var(--green); }
 }
 
 @media (max-width: 1024px) {
+  html, body { overflow-x: hidden; }
+  .menu-toggle { flex-shrink: 0; }
+  .brand { min-width: 0; }
   .nav-desktop { display: none; }
   .menu-toggle { display: block; }
-  .hero, .grid-2, .dest-grid, .features, .steps, .grid-4, .grid-3, .form-grid,
-  .page-equipe .founder-row {
-    grid-template-columns: 1fr;
+  .header-inner {
+    padding: 6px 20px;
+    gap: 12px;
   }
-  .hero { min-height: auto; padding: 120px 24px 48px; }
-  .features { margin: 24px 16px; }
-  .dest-intro { padding-bottom: 60px; }
-  .dest-grid { margin-top: -30px; }
+  .brand img { width: 68px; height: 68px; }
+  .site-title { font-size: 19px; }
+  .hero { min-height: auto; padding: 120px 28px 48px; }
+  .features,
+  .steps,
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .features { margin: 24px 20px; }
+  .dest-intro { padding-bottom: 80px; }
+  .dest-grid { margin-top: -40px; }
+  .page-hero {
+    padding: 120px 32px 56px;
+  }
   .page-hero::before, .page-hero.center::before {
     background: linear-gradient(180deg, #f7fafc 53%, rgba(247,250,252,0) 100%);
   }
   .form-card { padding: 24px; }
+  .section { padding: 56px 32px; }
+  .grid-2 { gap: 28px; }
+  .feature { padding: 24px 16px; }
+  .home-facts article { padding: 22px 16px; }
+  .site-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .page-contact .contact-ways a {
+    aspect-ratio: 1;
+    min-height: 0;
+    padding: 24px 16px;
+  }
+  .page-sejour .sejour-photo {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
 }
 
 /* Homepage */
@@ -873,7 +905,12 @@ footer a { color: var(--green); }
   overflow: hidden;
   background: #ddd;
 }
-.dest-card img { width: 100%; height: 100%; object-fit: cover; }
+.dest-card img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
 .dest-card h3 {
   font-style: italic;
   font-size: clamp(1.7rem, 2.4vw, 2.15rem);
@@ -922,30 +959,52 @@ footer a { color: var(--green); }
   .home-facts, .include-icons, .dest-cards {
     grid-template-columns: 1fr 1fr;
   }
-  .home-hero-copy { min-height: auto; padding: 130px 28px 48px; max-width: none; }
-  .home-hero h1 { font-size: clamp(2.8rem, 11vw, 3.6rem); }
+  .home-hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    min-height: auto;
+  }
+  .home-hero-copy {
+    min-height: auto;
+    padding: 120px 24px 56px 36px;
+    max-width: none;
+  }
+  .home-hero h1 { font-size: clamp(2.4rem, 5.5vw, 3.4rem); }
   .home-hero .lead-keep { white-space: normal; }
   .home-hero-art {
     position: relative;
-    width: 100%;
+    width: auto;
     height: auto;
-    padding: 0 24px 32px;
+    padding: 100px 28px 48px 0;
     justify-content: center;
+    align-items: center;
   }
   .home-hero-art img {
-    height: 220px;
+    height: min(280px, 34vw);
+    width: auto;
+    max-width: 100%;
   }
   .home-follow {
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    padding: 28px 20px;
   }
   .home-follow .arrow {
     transform: rotate(90deg);
     flex: none;
     height: 24px;
   }
-  .home-facts article { border-right: 0; border-bottom: 1px solid rgba(110,122,96,.18); }
+  .home-facts article {
+    border-right: 1px solid rgba(110,122,96,.18);
+    border-bottom: 1px solid rgba(110,122,96,.18);
+  }
+  .home-facts article:nth-child(2n) { border-right: 0; }
+  .home-facts article:nth-last-child(-n+2) { border-bottom: 0; }
+  .home-included { padding: 64px 32px; }
+  .home-path { padding: 12px 32px 64px; }
+  .home-dest { padding: 8px 32px 40px; }
 }
 
 /* Le Séjour — même mise en page, un peu plus compacte */
@@ -1064,6 +1123,119 @@ footer a { color: var(--green); }
   .page-sejour .prog-panels { padding: 28px 20px; }
   .page-sejour .prog-timeline { max-width: none; }
   .page-sejour .prog-timeline li { grid-template-columns: 6.2rem 1fr; gap: 12px; }
+}
+
+@media (max-width: 700px) {
+  .hero,
+  .grid-2,
+  .dest-grid,
+  .form-grid,
+  .grid-3,
+  .page-equipe .founder-row {
+    grid-template-columns: 1fr;
+  }
+  .dest-cards { grid-template-columns: 1fr; }
+  .header-inner { padding: 4px 14px; }
+  .brand img { width: 52px; height: 52px; }
+  .site-title { font-size: 16px; }
+  .section { padding: 40px 20px; }
+  .page-hero { padding: 100px 20px 40px; }
+  .hero { padding: 100px 20px 40px; }
+  .home-hero {
+    display: block;
+  }
+  .home-hero-copy { padding: 96px 20px 24px; }
+  .home-hero h1 { font-size: clamp(2.15rem, 9vw, 2.7rem); }
+  .home-hero .lead { font-size: 1.05rem; margin-bottom: 24px; }
+  .home-hero-art {
+    width: 100%;
+    padding: 8px 20px 28px;
+    justify-content: center;
+  }
+  .home-hero-art img {
+    height: 140px;
+    margin: 0 auto;
+    opacity: 0.38;
+  }
+  .home-included { padding: 48px 20px; }
+  .home-included .intro { margin-bottom: 36px; }
+  .home-path { padding: 8px 20px 48px; }
+  .home-dest { padding: 8px 20px 32px; }
+  .home-facts article { padding: 18px 12px; }
+  .home-facts strong { font-size: 1.25rem; }
+  .feature { padding: 20px 12px; }
+  .feature svg { width: 40px; height: 40px; }
+  .home-cta { gap: 10px; }
+  .home-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .home-cta .btn,
+  .home-cta .btn-outline {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .btn { max-width: 100%; }
+  .page-contact .contact-ways p,
+  .page-contact .contact-ways a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .include-icons { gap: 28px 16px; }
+  .include-icons img { border-radius: 14px; }
+  .include-icons h3 { font-size: 1.25rem; }
+  .page-contact .contact-ways a {
+    aspect-ratio: auto;
+    min-height: 0;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 18px 16px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+  .page-contact .icon-box {
+    width: 48px;
+    height: 48px;
+  }
+  .page-contact .contact-ways h3 { margin: 0 0 4px; }
+  .page-sejour .sejour-photo { aspect-ratio: 16 / 10; }
+  .page-sejour .box {
+    padding: 20px 16px;
+    border-radius: 22px;
+    border-width: 2px;
+  }
+  .page-sejour .box h1 { margin-bottom: 16px; }
+  .page-book .book-head { padding: 110px 20px 16px; }
+  .book-progress { gap: 4px; }
+  .book-progress li { font-size: 0.8rem; padding: 6px 8px; }
+  .book-empty { padding: 28px 18px; }
+  .price-card { padding: 24px 18px; }
+  .price-card .price { font-size: 2.1rem; }
+  .tab-list button { padding: 12px 16px; font-size: 0.82rem; }
+  .tab-panels { padding: 28px 16px 24px; min-height: 0; }
+  .cta-end { padding: 48px 20px; }
+  .dest-intro { padding: 48px 20px 72px; }
+  .dest-grid { margin-top: -28px; padding: 0 0 28px; }
+  .carousel { width: 100%; }
+  .page-equipe .team-intro { padding: 24px 20px; }
+  .page-equipe .founder-photo,
+  .page-equipe .founder-photo img,
+  .page-equipe .portrait {
+    width: min(200px, 58vw);
+    max-width: min(200px, 58vw);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    border-radius: 50% 50% 16px 16px;
+  }
+  .section[style*="padding-top:140px"],
+  .page-hero[style*="padding-top:140px"] {
+    padding-top: 100px !important;
+  }
 }
 
 /* Réservation */
@@ -1224,5 +1396,16 @@ footer a { color: var(--green); }
 .book-note { font-size: 0.92rem; color: var(--ink-3); }
 .book-ok { text-align: center; max-width: 520px; margin: 0 auto; }
 @media (max-width: 900px) {
-  .book-houses, .book-formulas, .book-pay { grid-template-columns: 1fr; }
+  .book-houses, .book-pay { grid-template-columns: 1fr; }
+}
+@media (max-width: 1024px) {
+  .page-sejour .sejour-photo {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+}
+@media (max-width: 700px) {
+  .book-formulas { grid-template-columns: 1fr; }
+  .page-book .book-head { padding: 110px 20px 16px; }
+  .page-sejour .sejour-photo { aspect-ratio: 16 / 10; }
 }

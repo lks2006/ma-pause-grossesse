@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>L’équipe – Ma Pause Grossesse</title>
-  <link rel="icon" href="https://mapausegrossesse.fr/wp-content/uploads/2026/08/cropped-Logo-ma-pause-grossesse-32x32.png">
+  <link rel="icon" href="img/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=navcta1">
+  <link rel="stylesheet" href="css/style.css?v=resp2">
   <style>
     .page-equipe .founder-row {
       display: grid;
@@ -22,10 +22,11 @@
     .page-equipe .founder-photo img,
     .page-equipe .portrait {
       width: 240px;
-      height: 320px;
+      height: auto;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: 50% 10%;
-      border-radius: 120px 120px 18px 18px;
+      border-radius: 50% 50% 18px 18px;
       display: block;
     }
     .page-equipe .team-intro {
@@ -53,7 +54,35 @@
     }
     .page-equipe .team-roles { padding-top: 36px; }
     @media (max-width: 1024px) {
+      .page-equipe .founder-row {
+        grid-template-columns: minmax(160px, 200px) 1fr;
+        gap: 28px;
+      }
+      .page-equipe .founder-row > * { min-width: 0; }
+      .page-equipe .founder-photo {
+        width: 100%;
+        max-width: 200px;
+        margin: 0;
+        overflow: hidden;
+      }
+      .page-equipe .founder-photo img,
+      .page-equipe .portrait {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+      }
+      .page-equipe .team-intro {
+        padding: 32px 28px;
+        column-gap: 28px;
+        grid-template-columns: auto 1fr;
+      }
+      .page-equipe .team-intro h2 { white-space: nowrap; }
+      .page-equipe .team-intro > div { padding-left: 28px; }
+    }
+    @media (max-width: 700px) {
       .page-equipe .founder-row { grid-template-columns: 1fr; }
+      .page-equipe .team-intro { grid-template-columns: 1fr; }
       .page-equipe .founder-photo,
       .page-equipe .founder-photo img,
       .page-equipe .portrait { margin-left: auto; margin-right: auto; }
@@ -63,6 +92,7 @@
         padding-left: 0;
         padding-top: 24px;
       }
+      .page-equipe .team-intro h2 { white-space: normal; }
     }
   </style>
 </head>
@@ -70,7 +100,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html">
-      <img src="https://mapausegrossesse.fr/wp-content/uploads/2026/08/Logo-ma-pause-grossesse.png" alt="Ma Pause Grossesse">
+      <img src="img/logo.png" alt="Ma Pause Grossesse">
       <span class="site-title">Ma Pause Grossesse</span>
     </a>
     <nav class="nav-desktop" aria-label="Principal">
@@ -143,22 +173,22 @@
 
   <section class="section wrap grid-4 team-roles">
     <article class="team-card">
-      <img class="square" src="https://mapausegrossesse.fr/wp-content/uploads/2026/08/2-1-1024x1024.png" alt="Ostéopathe">
+      <img class="square" src="img/roles/osteo.png" alt="Ostéopathe">
       <h3>Ostéopathe</h3>
       <p>Elle prend soin de votre corps grâce à des séances d’ostéopathie adaptées à chacune. Elle soulage vos tensions, améliore votre mobilité et vous accompagne tout au long de cette expérience.</p>
     </article>
     <article class="team-card">
-      <img class="square" src="https://mapausegrossesse.fr/wp-content/uploads/2026/08/4-1024x1024.png" alt="Professeur de yoga">
+      <img class="square" src="img/roles/yoga.png" alt="Professeur de yoga">
       <h3>Professeur de yoga</h3>
       <p>Elle vous accompagne. à travers des séances de yoga prénatal douces et adaptées à chaque trimestre de grossesse pour renforcer votre corps, apaiser votre esprit et créer du lien avec votre bébé</p>
     </article>
     <article class="team-card">
-      <img class="square" src="https://mapausegrossesse.fr/wp-content/uploads/2026/08/6-1024x1024.png" alt="Chef privé">
+      <img class="square" src="img/roles/chef.png" alt="Chef privé">
       <h3>Chef privé</h3>
       <p>Il élabore des repas savoureux, équilibrés et adaptés aux besoins des femmes enceintes. Des plats réalisés avec des produits frais et de saison.</p>
     </article>
     <article class="team-card">
-      <img class="square" src="https://mapausegrossesse.fr/wp-content/uploads/2026/08/8-1024x1024.png" alt="Photographe">
+      <img class="square" src="img/roles/photo.png" alt="Photographe">
       <h3>Photographe</h3>
       <p>Elle capture les moments précieux de votre grossesse avec sensibilité et bienveillance. Vous permettant de garder des souvenirs authentiques et intemporels de cet instant.</p>
     </article>
