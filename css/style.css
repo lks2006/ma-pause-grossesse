@@ -1234,15 +1234,7 @@ footer a { color: var(--green); }
   .dest-grid { margin-top: -28px; padding: 0 0 28px; }
   .carousel { width: 100%; }
   .page-equipe .team-intro { padding: 24px 20px; }
-  .page-equipe .founder-photo,
-  .page-equipe .founder-photo img,
-  .page-equipe .portrait {
-    width: min(200px, 58vw);
-    max-width: min(200px, 58vw);
-    height: auto;
-    aspect-ratio: 3 / 4;
-    border-radius: 50% 50% 16px 16px;
-  }
+  .page-equipe .founder-photo { display: none; }
   .section[style*="padding-top:140px"],
   .page-hero[style*="padding-top:140px"] {
     padding-top: 100px !important;

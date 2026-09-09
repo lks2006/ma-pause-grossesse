@@ -15,17 +15,13 @@
   <title>L’équipe | Ma Pause Grossesse</title>
   <link rel="icon" href="img/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=mob2">
+  <link rel="stylesheet" href="css/style.css?v=mob3">
   <style>
     .page-equipe .founder-row {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: start;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
+      grid-template-columns: 240px 1fr;
+      gap: 56px;
+      align-items: center;
     }
     .page-equipe .founder-photo {
       margin: 0;
@@ -68,8 +64,18 @@
     .page-equipe .team-roles { padding-top: 36px; }
     @media (max-width: 1024px) {
       .page-equipe .founder-row {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        grid-template-columns: minmax(160px, 200px) 1fr;
+        gap: 28px;
+      }
+      .page-equipe .founder-photo {
+        width: 100%;
+        max-width: 200px;
+        margin: 0;
+      }
+      .page-equipe .founder-photo img,
+      .page-equipe .portrait {
+        width: 100%;
+        max-width: 100%;
       }
       .page-equipe .team-intro {
         padding: 32px 28px;
@@ -81,10 +87,8 @@
     }
     @media (max-width: 700px) {
       .page-equipe .founder-row { grid-template-columns: 1fr; }
+      .page-equipe .founder-photo { display: none; }
       .page-equipe .team-intro { grid-template-columns: 1fr; }
-      .page-equipe .founder-photo,
-      .page-equipe .founder-photo img,
-      .page-equipe .portrait { margin-left: auto; margin-right: auto; }
       .page-equipe .team-intro > div {
         border-left: 0;
         border-top: 1px solid #6e7a60;
@@ -146,6 +150,9 @@
   </section>
 
   <section class="section wrap founder-row">
+    <figure class="founder-photo">
+      <img class="portrait" width="240" height="320" src="img/leane.jpg" alt="Léane Koch-Scheidt">
+    </figure>
     <div>
       <h1>Léane KOCH-SCHEIDT</h1>
       <h3><em>Fondatrice</em></h3>
