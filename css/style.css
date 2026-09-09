@@ -1235,7 +1235,7 @@ footer a { color: var(--green); }
   .dest-grid { margin-top: -28px; padding: 0 0 28px; }
   .carousel { width: 100%; }
   .page-equipe .team-intro { padding: 24px 20px; }
-  .page-equipe .founder-photo { display: none; }
+  .page-equipe .founder-photo { display: block; }
   .section[style*="padding-top:140px"],
   .page-hero[style*="padding-top:140px"] {
     padding-top: 100px !important;

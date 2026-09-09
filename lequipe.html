@@ -15,7 +15,7 @@
   <title>L’équipe | Ma Pause Grossesse</title>
   <link rel="icon" href="img/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=mob4">
+  <link rel="stylesheet" href="css/style.css?v=mob5">
   <style>
     .page-equipe .founder-row {
       display: grid;
@@ -87,8 +87,25 @@
       .page-equipe .team-intro > div { padding-left: 28px; }
     }
     @media (max-width: 700px) {
-      .page-equipe .founder-row { grid-template-columns: 1fr; }
-      .page-equipe .founder-photo { display: none; }
+      .page-equipe .founder-row {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 22px;
+        text-align: left;
+      }
+      .page-equipe .founder-photo {
+        display: block;
+        width: clamp(148px, 42vw, 172px);
+        max-width: clamp(148px, 42vw, 172px);
+        margin: 0 auto;
+      }
+      .page-equipe .founder-photo img,
+      .page-equipe .portrait {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 50% 50% 14px 14px;
+      }
+      .page-equipe .founder-row > div { width: 100%; }
       .page-equipe .team-intro { grid-template-columns: 1fr; }
       .page-equipe .team-intro > div {
         border-left: 0;
