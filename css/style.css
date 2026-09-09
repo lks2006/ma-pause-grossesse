@@ -396,6 +396,7 @@ p { margin: 0 0 1em; }
   object-position: 50% 12%;
   border-radius: 50% 50% 18px 18px;
   display: block;
+  filter: grayscale(1);
 }
 .page-equipe .team-intro { padding-bottom: 28px; }
 .page-equipe .team-sep { margin: 8px 0 8px; }
